@@ -1,7 +1,7 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
 from AppCoder.models import Clientes, Repuestos, Entregas
-from datetime import date
+
 
 
 # Create your views here.
@@ -30,5 +30,29 @@ def creo_entrega(self, cliente, repuesto, fecha_entrega):
     entrega.save
 
     return HttpResponse(f'Se creó correctamente la entrega a {entrega.cliente} del repuesto {entrega.repuesto} con fecha {entrega.fecha_entrega}')
+
+
+def inicio (request):
+
+    return render(request, 'AppCoder/inicio.html')
+
+
+def clientes (request):
+
+    return render(request, 'AppCoder/clientes.html')
+
+
+def presupuestos (request):
+
+    return render(request, 'AppCoder/presupuestos.html')
+
+
+def repuestos (request):
+
+    return render(request, 'AppCoder/repuestos.html')
+
+def entregas (request):
+
+    return render(request, 'AppCoder/entregas.html') 
 
 

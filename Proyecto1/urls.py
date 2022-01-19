@@ -15,14 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from AppCoder.views import creo_cliente, creo_repuesto, creo_entrega
 
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('crea-cliente/<nombre>/<numero_cliente>', creo_cliente),
-    path('crea-repuesto/<nombre>/<numero_repuesto>', creo_repuesto),
-    path('crea-entrega/<cliente>/<repuesto>/<fecha_entrega>', creo_entrega),    
     path('AppCoder/', include('AppCoder.urls'))
 ]
